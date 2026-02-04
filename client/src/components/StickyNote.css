@@ -22,11 +22,30 @@
   height: 1.75rem;
   width: 1.75rem;
   min-width: 1.75rem;
+  transition:
+    opacity 0.4s ease-in-out,
+    transform 0.4s ease-in-out;
 }
 
 .Icon:hover {
   transition: 1s;
   cursor: pointer;
+}
+
+.Icon.Overflow, .Icon.Close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.Icon.Open {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.Icon.Closed {
+  opacity: 0;
+  transform: rotate(-180deg);
 }
 
 .Icon.Update:hover {
@@ -51,7 +70,7 @@
   right: 1rem;
   max-height: fit-content;
   transition:
-    opacity 0.3s ease-in-out
+    opacity 0.4s ease-in-out
 }
 
 .IconDropdownContainer.open {
