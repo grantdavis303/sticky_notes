@@ -1,0 +1,63 @@
+.StickyNote {
+  min-height: 300px;
+  max-height: 300px;
+  border: 1px solid rgb(55, 60, 68);;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+  box-shadow: 0.2rem 0.2rem 0.2rem var(--text);
+  position: relative;
+}
+
+.StickyNote > :first-child {
+  margin-top: 0;
+}
+
+.StickyNote > div > h3, .StickyNote > p {
+  color: rgb(55, 60, 68);
+}
+
+.Icon {
+  color: rgb(55, 60, 68);;
+  height: 1.75rem;
+  width: 1.75rem;
+  min-width: 1.75rem;
+}
+
+.Icon:hover {
+  transition: 1s;
+  cursor: pointer;
+}
+
+.Icon.Update:hover {
+  color: var(--primary);
+}
+
+.Icon.Delete:hover {
+  color: red;
+}
+
+.IconDropdownContainer {
+  background-color: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  margin: unset;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  max-height: fit-content;
+  transition:
+    opacity 0.3s ease-in-out
+}
+
+.IconDropdownContainer.open {
+  opacity: 1;
+}
+
+.IconDropdownContainer.closed {
+  opacity: 0;
+}
