@@ -48,7 +48,8 @@ app.get('/', (req, res) => {
   res.send('🚀 Server is up and running!');
 })
 
-// Get all Notes
+// Retrieve all Notes
+
 app.get('/api/v1/notes', async (req, res) => {
   try {
     const query = await pool.query(
@@ -67,6 +68,7 @@ app.get('/api/v1/notes', async (req, res) => {
 })
 
 // Create a Note
+
 app.post('/api/v1/notes/create', async (req, res) => {
   console.log('Creating a new note request body:', req.body);
 
@@ -86,6 +88,7 @@ app.post('/api/v1/notes/create', async (req, res) => {
 })
 
 // Delete a Note
+
 app.delete('/api/v1/notes/delete/:id', async (req, res) => {
   try {
     const query = await pool.query(
@@ -102,6 +105,7 @@ app.delete('/api/v1/notes/delete/:id', async (req, res) => {
 })
 
 // Update a Note
+
 app.patch('/api/v1/notes/update/:id', async (req, res) => {
   console.log('Updating a note request body:', req.body);
 
