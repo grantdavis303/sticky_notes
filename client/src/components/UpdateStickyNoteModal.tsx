@@ -10,9 +10,12 @@ interface Props {
 function UpdateStickyNoteModal({ setIsUpdateModalOpen, setStickyNotes, updatedNote }: Props) {
   const [title, setTitle] = useState(updatedNote.title);
   const [content, setContent] = useState(updatedNote.content);
+  const [color, setColor] = useState(updatedNote.color);
 
   const handleTitleChange = (e: any) => setTitle(e.target.value);
   const handleContentChange = (e: any) => setContent(e.target.value);
+  const handleColorChange = (e: any) => setColor(e.target.value);
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
 
@@ -56,6 +59,14 @@ function UpdateStickyNoteModal({ setIsUpdateModalOpen, setStickyNotes, updatedNo
     }
   }
 
+  const stickyNoteColors = [
+    { color: 'Yellow', hex: '#ffffb6'},
+    { color: 'Green', hex: '#c3ffb6'},
+    { color: 'Blue', hex: '#b6fff8'},
+    { color: 'Purple', hex: '#eeb6ff'},
+    { color: 'Red', hex: '#ffb6b6'}
+  ]
+
   return (
     <>
       <div className='modal' id='modal' role="dialog" aria-modal="true">
@@ -73,12 +84,10 @@ function UpdateStickyNoteModal({ setIsUpdateModalOpen, setStickyNotes, updatedNo
           </div>
 
           <div>
-            <select id='color' name='color'>
-              <option value='#ffffb6'>Yellow</option>
-              <option value='#c3ffb6'>Green</option>
-              <option value='#b6fff8'>Blue</option>
-              <option value='#eeb6ff'>Purple</option>
-              <option value='#ffb6b6'>Red</option>
+            <select id='color' name='color' value={color} onChange={handleColorChange}>
+              {stickyNoteColors.map(item => (
+                <option key={item.color} value={item.hex}>{item.color}</option>
+              ))}
             </select>
           </div>
 
