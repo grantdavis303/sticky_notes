@@ -1,7 +1,5 @@
 # Sticky Notes
 
-# Sticky Notes
-
 A simple CRUD app for creating sticky notes on the web using React.js + TypeScript on the frontend and Express.js on the backend.
 
 Each sticky note should have:
@@ -51,7 +49,7 @@ open http://localhost:3000/
 cd server && node server.js
 ```
 
-## Improvements
+## Completed Improvements
 
 - [x] Add repo to GitHub
 - [x] Add time to "Created At"
@@ -63,10 +61,10 @@ cd server && node server.js
 - [x] On the update modal, make sure the correct color selected when clicked
 - [x] Change the size of the icons - smaller? 1.5 or 1.75? Chose 1.5
 
+## Future Improvements
 
-
+- Add: Tests for site functionality - Playwright, Jest, Vitest?
 - Add: "Are You Sure" modal when deleting a sticky note
-- Add: Tests for site functionality
 
 - Fix: If note title width is too big, it looks bad with the absolute container for dropdown icons - 2rem maybe change
 - Fix: Location for created at / updated at information for sticky notes - hover over icon?
@@ -75,12 +73,11 @@ cd server && node server.js
 - Fix: Inline CSS and move to separate CSS file
 - Fix: Mobile responsiveness for the notes
 
-- Fun: Add notification ex. "Sticky note successfully updated", "Sticky note successfully deleted"
+- Fun: Add notifications ex. "Sticky note successfully updated", "Sticky note successfully deleted"
 - Fun: Add a sound / animation when deleting a sticky note *poof*
 
 
 
 Q: Should I fetch notes based on user id in the title bar... `/users/1` or by using a JWT / session cookie?
-Q: Should the dropdown automatically close after an update / save?
-
+Q: Should the dropdown (on the side of the note) automatically close after an update / save?
 Note: hard-coded user id in the database (1)
